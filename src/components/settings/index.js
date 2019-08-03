@@ -1,25 +1,24 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react';
 
-import TIMESTAMP_FORMATS from 'src/constants/timestampFormats';
+import TimestampSettings from './timestampSettings';
+import DateSettings from './dateSettings';
 
-@inject('timestampStore')
-@observer
+
 class DatetimeSettings extends React.Component {
+  state = {
+    isFormatSeparatelySelected: false, 
+  }
 
   render() {
-    const { timestampStore } = this.props;
 
-    return (
+    return(
       <>
-        {Object.keys(TIMESTAMP_FORMATS).map(format => (
-          <button key={format} onClick={() => timestampStore.setFormat(format)}>
-            {format}
-          </button>
-        ))}
+        <TimestampSettings />
+        <DateSettings />
       </>
     );
   }
 }
+
 
 export default DatetimeSettings; 
