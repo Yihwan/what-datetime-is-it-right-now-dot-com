@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.14",
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "gatsby": "^2.13.45",
@@ -15,12 +16,18 @@
     "gatsby-plugin-sharp": "^2.2.9",
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
+    "mobx": "^5.13.0",
+    "mobx-react": "^6.1.1",
+    "mobx-react-devtools": "^6.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
+    "babel-preset-gatsby": "^0.2.8",
     "gatsby-plugin-root-import": "^2.0.5",
     "prettier": "^1.18.2"
   },

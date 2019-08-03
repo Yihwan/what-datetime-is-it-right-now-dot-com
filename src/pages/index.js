@@ -1,12 +1,13 @@
 import React from 'react';
-import moment from 'moment';
 
-class IndexPage extends React.Component {
-  render() {
-    return(
-      <div>{moment().format()}</div>
-    );
-  }
-}
+import Datetime from 'src/components/datetime';
+import Settings from 'src/components/settings';
 
-export default IndexPage;
+const IndexPage = () => (
+  <>
+    <Settings />
+    <Datetime />
+  </>
+);
+
+export default IndexPage; 
