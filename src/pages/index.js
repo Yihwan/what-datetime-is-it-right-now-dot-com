@@ -1,12 +1,10 @@
 import React from 'react';
 
-import Datetime from 'src/components/datetime';
-import Settings from 'src/components/settings';
+import Timestamp from 'src/components/timestamp';
 
 const IndexPage = () => (
   <>
-    <Settings />
-    <Datetime />
+    <Timestamp />
   </>
 );
 
