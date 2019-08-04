@@ -3,10 +3,7 @@ import React from 'react';
 import TimestampSettings from './timestampSettings';
 
 
-class DatetimeSettings extends React.Component {
-  state = {
-    isFormatSeparatelySelected: false, 
-  }
+class Launchpad extends React.Component {
 
   render() {
 
@@ -19,4 +16,4 @@ class DatetimeSettings extends React.Component {
 }
 
 
-export default DatetimeSettings; 
+export default Launchpad; 

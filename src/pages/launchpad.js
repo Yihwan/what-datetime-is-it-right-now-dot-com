@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Settings from 'src/components/settings';
+import Launchpad from 'src/components/launchpad';
 
-const Launchpad = () => (
+const LaunchpadPage = () => (
   <>
-    <Settings />
+    <Launchpad />
   </>
 );
 
-export default Launchpad; 
+export default LaunchpadPage; 
