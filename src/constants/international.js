@@ -13,6 +13,7 @@ export const DEFAULTS = {
   'calendar': 'gregory',
   'numberSystem': 'latn',
   'hourCycle': 'h12',
+  'format': 'localeDateString',
 };
 
 export const CALENDARS = {

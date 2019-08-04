@@ -1,90 +1,62 @@
 import React from 'react';
-import { observer, inject } from 'mobx-react';
-import Select from 'mineral-ui/Select';
-import Radio, { RadioGroup } from 'mineral-ui/Radio';
-import { lowerCase } from 'lodash';
 
-import { TIMESTAMP_NAMES } from 'src/constants/timestampFormats';
-import { selectData } from 'src/constants/intnl';
+import { TIMESTAMP_NAMES } from 'src/constants/timestamp';
+import { DEFAULTS, selectData } from 'src/constants/international';
 
-@inject('timestampStore')
-@observer
 class TimestampSettings extends React.Component {
-  handleFormatChange = event => {
-    const { timestampStore: { setFormat } } = this.props;
-    setFormat(event.target.value);
+  state = {...DEFAULTS}
+
+  componentDidMount() {
+    this.setState(
+      Object.assign(
+        this.state, JSON.parse(localStorage.getItem('timestampSettings'))
+      ));
+      
+    localStorage.setItem('timestampSettings', JSON.stringify(this.state));
   }
 
-  handleLocaleChange = event => {
-    const { timestampStore: { setLocale } } = this.props; 
-    setLocale(lowerCase(event.value));
-  }
-
-  handleNumberSystemChange = event => {
-    const { timestampStore: { setNumberSystem } } = this.props;
-    setNumberSystem(event.value);
-  }
-
-  handleCalendarChange = event => {
-    const { timestampStore: { setCalendar } } = this.props;
-    setCalendar(event.value);
-  }
-
-  handleHourCycleChange = event => {
-    const { timestampStore: { setHourCycle } } = this.props;
-    setHourCycle(event.value);
+  handleTimestampSettingsChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value }, () => {
+      localStorage.setItem('timestampSettings', JSON.stringify(this.state));
+    });
   }
   
   render() {
+
     return (
-      <RadioGroup
-        name="timestamp-settings"
-        defaultChecked="localeDateString"
-        size="jumbo"
-      >
-        <div>Timestamp Settings</div>
-        <Radio
-          label={TIMESTAMP_NAMES.localeDateString}
-          value="localeDateString"
-          onChange={this.handleFormatChange}
-        />
-
-        <Select 
-          onChange={this.handleLocaleChange} 
-          data={selectData.locale} 
-          placeholder="Select locale ..."
-        />
-
-        <Select 
-          onChange={this.handleNumberSystemChange} 
-          data={selectData.numberSystem} 
-          placeholder="Select number system ..."
-        />
-
-        <Select 
-          onChange={this.handleCalendarChange} 
-          data={selectData.calendar}
-          placeholder="Select calendar type ..."
-        />
-
-        <Select 
-          onChange={this.handleHourCycleChange} 
-          data={selectData.hourCycle}
-          placeholder="Select hour cycle type ..."
-        />
-
-        {Object.keys(TIMESTAMP_NAMES)
-          .filter(name => name !== 'localeDateString')
-          .map(format => (
-            <Radio 
-              key={format}
-              label={TIMESTAMP_NAMES[format]} 
-              value={format}
-              size="jumbo"
-              onChange={this.handleFormatChange}
-            />
+      <>
+        {Object.keys(DEFAULTS)
+          .filter(name => name !== 'format')
+          .map(selectOption => (
+            <label key={selectOption}>{selectOption}
+              <select name={selectOption} onChange={this.handleTimestampSettingsChange}>
+                {selectData[selectOption].map(data => (
+                  <option value={data.value === this.state[selectOption]} key={data.value} value={data.value}>{data.text}</option>
+                ))}
+              </select>
+            </label>
           ))}
-      </RadioGroup>
+
+        <fieldset>
+          {Object.keys(TIMESTAMP_NAMES)
+            .map(format => (
+              <div key={format}>
+                <input
+                  name="format"
+                  type="radio"
+                  key={format}
+                  id={format}
+                  value={format}
+                  onChange={this.handleTimestampSettingsChange}
+                  checked={format === this.state.format}
+                />
+                <label htmlFor={format}>
+                  {TIMESTAMP_NAMES[format]}
+                </label>
+              </div>
+            ))}
+        </fieldset>
+      </>
     );
   }
 }

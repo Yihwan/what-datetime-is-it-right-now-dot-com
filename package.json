@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "datetime-optimized",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "A site that tells you what time it is right now.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Yihwan Kim <hi@yihwan.kim>",
   "dependencies": {
     "@emotion/babel-preset-css-prop": "^10.0.14",
     "@emotion/core": "^10.0.15",
@@ -20,10 +20,6 @@
     "gatsby-source-filesystem": "^2.1.7",
     "gatsby-transformer-sharp": "^2.2.5",
     "lodash": "^4.17.15",
-    "mineral-ui": "^0.58.0",
-    "mobx": "^5.13.0",
-    "mobx-react": "^6.1.1",
-    "mobx-react-devtools": "^6.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",

@@ -1,6 +1,7 @@
-import { formatDateForLocale } from './intnl';
+import { formatDateForLocale } from './international';
 
 export const TIMESTAMP_NAMES = {
+  localeDateString: 'Date String Locale',
   unix: 'UNIX',
   binary: 'Binary',
   hexadecimal: 'Hexadecimal',
@@ -8,11 +9,12 @@ export const TIMESTAMP_NAMES = {
   UTCString: 'UTC String',
   timeString: 'Time String',
   militaryTime: 'Military Time',
-  localeDateString: 'Date String Locale',
-  formatted: 'formatted',
 }
 
 const TIMESTAMP_ACTIONS = {
+  localeDateString: (date, locale, numberSystem, calendar, hourCycle) => (
+    formatDateForLocale(date, locale, numberSystem, calendar, hourCycle)
+  ),  
   unix: date => date.getTime(), 
   binary: date => date.getTime().toString(2), 
   hexadecimal: date => date < 256 ? 0 : Math.abs(date).toString(16),  
@@ -20,10 +22,6 @@ const TIMESTAMP_ACTIONS = {
   UTCString: date => date.toUTCString(), 
   timeString: date => date.toTimeString(), 
   militaryTime: date => `${date.getHours()}${date.getMinutes()}:${date.getSeconds()} hours`,  
-  localeDateString: (date, locale, numberSystem, calendar, hourCycle) => (
-    formatDateForLocale(date, locale, numberSystem, calendar, hourCycle)
-  ),  
-  formatted: 'formatted',
 };
 
 export default TIMESTAMP_ACTIONS;
