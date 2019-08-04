@@ -29,9 +29,15 @@ class TimestampSettings extends React.Component {
           .filter(name => name !== 'format')
           .map(selectOption => (
             <label key={selectOption}>{selectOption}
-              <select name={selectOption} onChange={this.handleTimestampSettingsChange}>
+              <select 
+                name={selectOption} 
+                onChange={this.handleTimestampSettingsChange} 
+                value={this.state[selectOption]}
+              >
                 {selectData[selectOption].map(data => (
-                  <option value={data.value === this.state[selectOption]} key={data.value} value={data.value}>{data.text}</option>
+                  <option key={data.value} value={data.value}>
+                    {data.text}
+                  </option>
                 ))}
               </select>
             </label>
