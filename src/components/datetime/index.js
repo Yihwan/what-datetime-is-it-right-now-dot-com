@@ -2,7 +2,7 @@ import React from 'react';
 import { observer, inject } from 'mobx-react';
 import { css } from '@emotion/core';
 
-import TIMESTAMP_FORMATS from 'src/constants/timestampFormats';
+import TIMESTAMP_ACTIONS from 'src/constants/timestampFormats';
 import DateComponent from 'src/components/datetime/dateComponent';
 import TimeComponent from 'src/components/datetime/timeComponent';
 
@@ -27,10 +27,10 @@ class Datetime extends React.Component {
 
   render() {
     const { timestampStore } = this.props;
-    const { locale, format } = timestampStore; 
+    const { locale, format, numberSystem, calendar, hourCycle } = timestampStore; 
     const { date } = this.state;
 
-    if (format !== TIMESTAMP_FORMATS.formatted) {
+    if (format !== TIMESTAMP_ACTIONS.formatted) {
       return(
         <div css={css`font-size: 56px;`}>
           {timestampStore.output(date)}
@@ -39,7 +39,7 @@ class Datetime extends React.Component {
       ); 
     }
 
-    if (format === TIMESTAMP_FORMATS.formatted) {
+    if (format === TIMESTAMP_ACTIONS.formatted) {
       return (
         <>
           <TimeComponent date={date} />

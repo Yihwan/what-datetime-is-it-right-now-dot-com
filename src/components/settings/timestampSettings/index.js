@@ -1,59 +1,84 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
-import { capitalize } from 'lodash';
 import Select from 'mineral-ui/Select';
 import Radio, { RadioGroup } from 'mineral-ui/Radio';
+import { lowerCase } from 'lodash';
 
-import TIMESTAMP_FORMATS from 'src/constants/timestampFormats';
-import { generateSelectData } from 'src/constants/intnl';
+import { TIMESTAMP_NAMES } from 'src/constants/timestampFormats';
+import { selectData } from 'src/constants/intnl';
 
 @inject('timestampStore')
 @observer
 class TimestampSettings extends React.Component {
-  state = {
-    selectedFormat: 'en',
-    selectedLocale: 'en',
+  handleFormatChange = event => {
+    const { timestampStore: { setFormat } } = this.props;
+    setFormat(event.target.value);
   }
 
-  handleLocaleChange = (event) => {
-    const { timestampStore } = this.props; 
-    const selectedLocale = event.text; 
-
-    this.setState({ selectedLocale });
-    timestampStore.setLocale(selectedLocale);
+  handleLocaleChange = event => {
+    const { timestampStore: { setLocale } } = this.props; 
+    setLocale(lowerCase(event.value));
   }
 
-  handleFormatChange = (event) => {
-    const { timestampStore } = this.props;
-    const selectedFormat = event.target.value; 
+  handleNumberSystemChange = event => {
+    const { timestampStore: { setNumberSystem } } = this.props;
+    setNumberSystem(event.value);
+  }
 
-    this.setState({ selectedFormat });
-    timestampStore.setFormat(selectedFormat);
+  handleCalendarChange = event => {
+    const { timestampStore: { setCalendar } } = this.props;
+    setCalendar(event.value);
+  }
+
+  handleHourCycleChange = event => {
+    const { timestampStore: { setHourCycle } } = this.props;
+    setHourCycle(event.value);
   }
   
   render() {
-    const data = generateSelectData();
-
     return (
       <RadioGroup
         name="timestamp-settings"
-        defaultChecked="formatted"
+        defaultChecked="localeDateString"
+        size="jumbo"
       >
+        <div>Timestamp Settings</div>
         <Radio
-          label="Local Date String"
+          label={TIMESTAMP_NAMES.localeDateString}
           value="localeDateString"
-          size="jumbo"
-            onChange={this.handleFormatChange}
+          onChange={this.handleFormatChange}
         />
 
-        <Select onChange={this.handleLocaleChange} data={data} />
+        <Select 
+          onChange={this.handleLocaleChange} 
+          data={selectData.locale} 
+          placeholder="Select locale ..."
+        />
 
-        {Object.keys(TIMESTAMP_FORMATS)
+        <Select 
+          onChange={this.handleNumberSystemChange} 
+          data={selectData.numberSystem} 
+          placeholder="Select number system ..."
+        />
+
+        <Select 
+          onChange={this.handleCalendarChange} 
+          data={selectData.calendar}
+          placeholder="Select calendar type ..."
+        />
+
+        <Select 
+          onChange={this.handleHourCycleChange} 
+          data={selectData.hourCycle}
+          placeholder="Select hour cycle type ..."
+        />
+
+        {Object.keys(TIMESTAMP_NAMES)
           .filter(name => name !== 'localeDateString')
           .map(format => (
             <Radio 
               key={format}
-              label={capitalize(format)} 
+              label={TIMESTAMP_NAMES[format]} 
               value={format}
               size="jumbo"
               onChange={this.handleFormatChange}

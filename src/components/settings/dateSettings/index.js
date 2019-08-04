@@ -1,31 +1,32 @@
 import React from 'react';
 import { observer, inject } from 'mobx-react';
-import Button from 'mineral-ui/Button';
-
-import TIMESTAMP_FORMATS from 'src/constants/timestampFormats';
 
 /*
 
 How to integrate locales? At top level or unit level? 
 
-SUPPORTED FORMATS: 
-Intl.DateTimeFormat
-SHOW: MONTH, DAY, YEAR, DAY OF WEEK, TIME ZONE
 
-FORMAT AND ORDER: 
-MONTH DAY YEAR DAY
-You can also add text
+--- 
+CALENDAR: 
+LOCATION: 
 
-MONTH SETTING: 
-DAY SETTING: 
-YEAR SETTING: 
-DAY OF WEEK SETTING: 
+FORMAT: 
+DAY MONTH YEAR 
+YEAR MONTH DAY
+MONTH DAY YEAR
 
-SHOW TIMEZONE: YES/NO 
-SELECT TIMEZONE: 
+SHOW DAY OF WEEK: [CHECK]
+Radio: at beginning, at end
+
+MONTH SETTING:
+DAY SETTING:
+YEAR SETTING:
+DAY OF WEEK SETTING:
+
 
 */
 // @inject('dateStore')
+
 @observer
 class Date extends React.Component {
 
@@ -34,8 +35,9 @@ class Date extends React.Component {
 
     return (
       <>
+        <div>Date settings</div>
         <button>number date</button>
-        <button>full date</button>
+        
       </>
     );
   }
