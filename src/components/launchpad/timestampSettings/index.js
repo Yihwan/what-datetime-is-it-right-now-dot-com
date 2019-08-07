@@ -22,7 +22,6 @@ class TimestampSettings extends React.Component {
   }
   
   render() {
-
     return (
       <>
         {Object.keys(DEFAULTS)
