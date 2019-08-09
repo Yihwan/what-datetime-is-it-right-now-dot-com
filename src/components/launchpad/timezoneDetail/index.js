@@ -64,7 +64,7 @@ class TimezoneDetail extends React.Component {
   }
 
   removeLoc = loc => {
-    const [region, city] = loc.zone.split('/');
+    const region = loc.zone.split('/')[0];
     const newArray = [...this.state.selectedLoc[region]];
     const index = newArray.indexOf(loc);
 
