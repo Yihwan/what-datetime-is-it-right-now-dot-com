@@ -1,6 +1,7 @@
 import React from 'react';
 
 import TimestampSettings from './timestampSettings';
+import TimezoneGrid from './timezoneGrid';
 import TimezoneDetail from './timezoneDetail';
 
 
@@ -36,6 +37,7 @@ class Launchpad extends React.Component {
     return(
       <>
         <TimestampSettings />
+        <TimezoneGrid/>
         <TimezoneDetail date={date}/>
       </>
     );
