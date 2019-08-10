@@ -3,6 +3,8 @@ import React from 'react';
 import { TIMESTAMP_NAMES } from 'src/constants/timestamp';
 import { DEFAULTS, selectData } from 'src/constants/international';
 
+import { TimestampSettingsContainer } from './style';
+
 class TimestampSettings extends React.Component {
   state = {...DEFAULTS}
 
@@ -23,7 +25,7 @@ class TimestampSettings extends React.Component {
   
   render() {
     return (
-      <>
+      <TimestampSettingsContainer>
         {Object.keys(DEFAULTS)
           .filter(name => name !== 'format')
           .map(selectOption => (
@@ -61,7 +63,7 @@ class TimestampSettings extends React.Component {
               </div>
             ))}
         </fieldset>
-      </>
+      </TimestampSettingsContainer>
     );
   }
 }

@@ -4,7 +4,9 @@ import TimestampSettings from './timestampSettings';
 import TimezoneGrid from './timezoneGrid';
 import TimezoneDetail from './timezoneDetail';
 import NewsVideo from './newsVideo';
+import NewsMarquee from './newsMarquee';
 
+import { LaunchpadContainer } from './style';
 
 class Launchpad extends React.Component {
   state = {
@@ -36,31 +38,15 @@ class Launchpad extends React.Component {
     const { date } = this.state; 
 
     return(
-      <>
+      <LaunchpadContainer>
         <TimestampSettings />
-        <TimezoneGrid/>
         <TimezoneDetail date={date}/>
+        <TimezoneGrid/>
         <NewsVideo />
-      </>
+        <NewsMarquee />
+      </LaunchpadContainer>
     );
   }
 }
 
-
 export default Launchpad; 
-
-// output = date => {
-//   const {
-//     locale, numberSystem, calendar, hourCycle, format
-//   } = JSON.parse(localStorage.getItem('timestampSettings'));
-
-//   return (
-//     TIMESTAMP_ACTIONS[format](
-//       date,
-//       locale,
-//       numberSystem,
-//       calendar,
-//       hourCycle
-//     )
-//   );
-// }

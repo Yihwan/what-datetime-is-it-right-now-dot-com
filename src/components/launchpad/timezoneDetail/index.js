@@ -6,7 +6,8 @@ import { stringifyUTCOffset } from 'src/util/datetime';
 
 import LocationForm from './components/locationForm';
 import ActionButton from './components/actionButton';
-import { TimezoneDetailTable } from './style';
+
+import { TimezoneDetailTable, TimezoneDetailContainer } from './style';
 
 class TimezoneDetail extends React.Component {
   state = {
@@ -87,8 +88,7 @@ class TimezoneDetail extends React.Component {
     const homeLocOffsetUTC = moment.tz.zone(homeLoc.zone).parse(date) / 60;
 
     return(
-      <>
-        <div>Timezone Detail:</div>
+      <TimezoneDetailContainer>
         <TimezoneDetailTable>
           <thead>
             <tr>
@@ -146,7 +146,7 @@ class TimezoneDetail extends React.Component {
           ))}
         </TimezoneDetailTable>
         <LocationForm selectNewLoc={this.selectNewLoc} />
-      </>
+      </TimezoneDetailContainer>
     );
   }
 }
