@@ -5,6 +5,7 @@ import TimezoneGrid from './timezoneGrid';
 import TimezoneDetail from './timezoneDetail';
 import NewsVideo from './newsVideo';
 import NewsMarquee from './newsMarquee';
+import NewsFeed from './newsFeed';
 
 import { LaunchpadContainer } from './style';
 
@@ -44,6 +45,7 @@ class Launchpad extends React.Component {
         <TimezoneGrid/>
         <NewsVideo />
         <NewsMarquee />
+        <NewsFeed />
       </LaunchpadContainer>
     );
   }
