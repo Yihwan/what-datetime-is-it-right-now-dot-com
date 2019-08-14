@@ -42,7 +42,7 @@ class Launchpad extends React.Component {
       <LaunchpadContainer>
         <TimestampSettings />
         <TimezoneDetail date={date}/>
-        <TimezoneGrid/>
+        <TimezoneGrid date={date}/>
         <NewsVideo />
         <NewsMarquee />
         <NewsFeed />

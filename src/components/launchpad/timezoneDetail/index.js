@@ -3,11 +3,19 @@ import moment from 'moment';
 import 'moment-timezone';
 
 import { stringifyUTCOffset } from 'src/util/datetime';
+import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 
 import LocationForm from './components/locationForm';
 import ActionButton from './components/actionButton';
 
-import { TimezoneDetailTable, TimezoneDetailContainer } from './style';
+import { 
+  TimezoneDetailTable, 
+  TimezoneDetailContainer, 
+  TimeCell, 
+  DateCell, 
+  ColorCell,
+  RegionCell,
+} from './style';
 
 class TimezoneDetail extends React.Component {
   state = {
@@ -88,65 +96,69 @@ class TimezoneDetail extends React.Component {
     const homeLocOffsetUTC = moment.tz.zone(homeLoc.zone).parse(date) / 60;
 
     return(
-      <TimezoneDetailContainer>
-        <TimezoneDetailTable>
-          <thead>
-            <tr>
-              <th>Location</th>
-              <th>D</th>
-              <th>Time</th>
-              <th>Date M/D</th>
-              <th>Home Zone Diff</th>
-              <th>UTC Diff</th>
-              <th>Timezone</th>
-              <th>D/N Circle</th>
-              <th>Sunrise Time</th>
-              <th>Sunset Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr key="homeLoc">
-              <td>{homeLoc.city}</td>
-              <td></td>
-              <td>{moment(date).tz(homeLoc.zone).format('HH:mm:ss')}</td>
-              <td>{moment(date).tz(homeLoc.zone).format('MM/DD')}</td>
-              <td>N/A</td>
-              <td>{stringifyUTCOffset(homeLocOffsetUTC)}</td>
-              <td>{homeLoc.zone}</td>
-              <td>D/N Circle</td>
-              <td>Sunrise Time</td>
-              <td>Sunset Time</td>
-            </tr>
-          </tbody>
-          {Object.keys(selectedLoc).map(region => (
-            <tbody key={region}>
+      <LaunchpadWindow title="TZ Detail">
+        <TimezoneDetailContainer>
+          <TimezoneDetailTable>
+            <thead>
               <tr>
-                <td>{region}</td>
+                <th>Location</th>
+                <th>D</th>
+                <th>Time</th>
+                <th>Date M/D</th>
+                <th>Home Zone Diff</th>
+                <th>UTC Diff</th>
+                <th>D/N Circle</th>
+                <th>Sunrise Time</th>
+                <th>Sunset Time</th>
               </tr>
-              {selectedLoc[region].map((loc, idx) => (
-                <tr key={`${loc.city}-${idx}`}>
-                  <td>{loc.city}</td>
-                  <td>
-                    <ActionButton 
-                      loc={loc}
-                      removeLoc={this.removeLoc} 
-                    />
-                    </td>
-                  <td>{moment(date).tz(loc.zone).format('HH:mm:ss')}</td>
-                  <td>{moment(date).tz(loc.zone).format('MM/DD')}</td>
-                  <td>{stringifyUTCOffset(homeLocOffsetUTC - (moment.tz.zone(loc.zone).parse(date) / 60))}</td>
-                  <td>{stringifyUTCOffset(moment.tz.zone(loc.zone).parse(date) / 60)}</td>
-                  <td>{loc.zone}</td>
-                  <td>D/N Circle</td>
-                  <td>Sunrise Time</td>
-                  <td>Sunset Time</td>
-                </tr>
-              ))}
+            </thead>
+            <tbody>
+              <tr key="homeLoc">
+                <td>{homeLoc.city}</td>
+                <td></td>
+                <TimeCell>{moment(date).tz(homeLoc.zone).format('HH:mm:ss')}</TimeCell>
+                <DateCell>{moment(date).tz(homeLoc.zone).format('MM/DD')}</DateCell>
+                <td>N/A</td>
+                <ColorCell>{stringifyUTCOffset(homeLocOffsetUTC)}</ColorCell>
+                <td>D/N Circle</td>
+                <td>Sunrise Time</td>
+                <td>Sunset Time</td>
+              </tr>
             </tbody>
-          ))}
-        </TimezoneDetailTable>
-        <LocationForm selectNewLoc={this.selectNewLoc} />
-      </TimezoneDetailContainer>
+            {Object.keys(selectedLoc).map(region => (
+              <tbody key={region}>
+                <tr>
+                  <RegionCell>{region}</RegionCell>
+                </tr>
+                {selectedLoc[region].map((loc, idx) => {
+                  const homeLocOffset = homeLocOffsetUTC - (moment.tz.zone(loc.zone).parse(date) / 60);
+                  const utcOffset = moment.tz.zone(loc.zone).parse(date) / 60;
+
+                  return(
+                    <tr key={`${loc.city}-${idx}`}>
+                      <td>{loc.city}</td>
+                      <td>
+                        <ActionButton
+                          loc={loc}
+                          removeLoc={this.removeLoc}
+                        />
+                      </td>
+                      <TimeCell>{moment(date).tz(loc.zone).format('HH:mm:ss')}</TimeCell>
+                      <DateCell>{moment(date).tz(loc.zone).format('MM/DD')}</DateCell>
+                      <ColorCell signal={homeLocOffset > 0}>{stringifyUTCOffset(homeLocOffset)}</ColorCell>
+                      <ColorCell signal={!!(utcOffset > 0)}>{stringifyUTCOffset(utcOffset)}</ColorCell>
+                      <td>D/N Circle</td>
+                      <td>Sunrise Time</td>
+                      <td>Sunset Time</td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            ))}
+          </TimezoneDetailTable>
+          <LocationForm selectNewLoc={this.selectNewLoc} />
+        </TimezoneDetailContainer>
+      </LaunchpadWindow>
     );
   }
 }

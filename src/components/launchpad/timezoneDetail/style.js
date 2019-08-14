@@ -1,12 +1,37 @@
 import styled from '@emotion/styled';
+import { COLORS, SPACER } from 'src/constants/style';
 
 export const TimezoneDetailContainer = styled.section`
-  overflow: scroll;
+  overflow: auto;
   grid-column: 2 / 3; 
   grid-row: 1 / 2; 
 `;
 
 export const TimezoneDetailTable = styled.table`
-  border: 1px solid black; 
   table-layout: fixed;
+
+  thead {
+    background-color: ${COLORS.grey};
+    color: ${COLORS.whiteD1};
+  }
+
+  tbody {
+    color: ${COLORS.blooberbOrange};
+  }
+`;
+
+export const TimeCell = styled.td`
+  color: ${COLORS.blueL1};
+`;
+
+export const DateCell = styled.td`
+
+`;
+
+export const RegionCell = styled.td`
+  color: ${COLORS.white};
+`;
+
+export const ColorCell = styled.td`
+  color: ${({ signal }) => signal ? COLORS.greenL1 : COLORS.redL1 };
 `;
