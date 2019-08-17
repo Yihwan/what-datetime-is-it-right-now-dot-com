@@ -1,6 +1,7 @@
 import React from 'react';
 
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
+import Timestamp from 'src/components/timestamp';
 
 import {
   ActionContainer,
@@ -15,7 +16,7 @@ const Home = () => (
     <ActionContainer>
       <InnerContainer>
         <HomeLink href="/">Go Back</HomeLink>
-        <CurrentTimeContainer>Monday, Something 12:34 PM</CurrentTimeContainer>
+        <CurrentTimeContainer><Timestamp /></CurrentTimeContainer>
       </InnerContainer>
 
       <A3Z>A3-Z</A3Z>

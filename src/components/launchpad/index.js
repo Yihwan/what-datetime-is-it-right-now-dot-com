@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Home from './home';
-import TimestampSettings from './timestampSettings';
+import DatetimeSettings from './datetimeSettings';
 import TimezoneGrid from './timezoneGrid';
 import TimezoneDetail from './timezoneDetail';
 import NewsVideo from './newsVideo';
@@ -45,7 +45,7 @@ class Launchpad extends React.Component {
     return(
       <LaunchpadContainer>
         <Home />
-        <TimestampSettings />
+        <DatetimeSettings date={date} toggleLocalStorageUpdated={this.toggleLocalStorageUpdated} />
       </LaunchpadContainer>
     );
   }

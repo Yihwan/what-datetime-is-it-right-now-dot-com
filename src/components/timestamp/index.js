@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from '@emotion/core';
 
 import TIMESTAMP_ACTIONS from 'src/constants/timestamp';
 
@@ -30,9 +29,12 @@ class Timestamp extends React.Component {
   }
 
   output = date => {
+    // TODO-YK: Fix this shit. 
+    if (!JSON.parse(localStorage.getItem('datetimeSettings'))) return;
+
     const {
       locale, numberSystem, calendar, hourCycle, format
-    } = JSON.parse(localStorage.getItem('timestampSettings'));
+    } = JSON.parse(localStorage.getItem('datetimeSettings'));
 
     return(
       TIMESTAMP_ACTIONS[format](
@@ -49,7 +51,7 @@ class Timestamp extends React.Component {
     const { date } = this.state;
 
     return (
-      <div css={css`font-size: 56px;`}>
+      <div>
         {this.output(date)}
       </div>
     ); 

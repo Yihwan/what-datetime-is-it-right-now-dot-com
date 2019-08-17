@@ -119,44 +119,48 @@ export const formatDateForLocale = (date, locale, numberSystem, calendar, hourCy
 );
 
 export const generateLocaleSelectData = () => (
-  Object.keys(LOCALES).map(key => (
+  Object.keys(LOCALES).map(datetimeKey => (
     {
-      text: LOCALES[key],
-      value: key,
+      datetimeKey,
+      value: LOCALES[datetimeKey],
+      type: 'locale',
     }
   ))
 );
 
 export const generateNumberSystemSelectData = () => (
-  Object.keys(NUMBER_SYSTEMS).map(key => (
+  Object.keys(NUMBER_SYSTEMS).map(datetimeKey => (
     {
-      text: NUMBER_SYSTEMS[key],
-      value: key,
+      datetimeKey,
+      value: NUMBER_SYSTEMS[datetimeKey],
+      type: 'numberSystem',
     }
   ))
 );
 
 export const generateCalendarSelectData = () => (
-  Object.keys(CALENDARS).map(key => (
+  Object.keys(CALENDARS).map(datetimeKey => (
     {
-      text: CALENDARS[key],
-      value: key,
+      datetimeKey,
+      value: CALENDARS[datetimeKey],
+      type: 'calendar',
     }
   ))
 );
 
 export const generateHourCycleSelectData = () => (
-  Object.keys(HOUR_CYCLES).map(key => (
+  Object.keys(HOUR_CYCLES).map(datetimeKey => (
     {
-      text: HOUR_CYCLES[key],
-      value: key,
+      datetimeKey,
+      value: HOUR_CYCLES[datetimeKey],
+      type: 'hourCycle',
     }
   ))
 );
 
 export const selectData = {
-  locale: generateLocaleSelectData(),
-  numberSystem: generateNumberSystemSelectData(),
-  calendar: generateCalendarSelectData(),
-  hourCycle: generateHourCycleSelectData(),
+  localeData: generateLocaleSelectData(),
+  numberSystemData: generateNumberSystemSelectData(),
+  calendarData: generateCalendarSelectData(),
+  hourCycleData: generateHourCycleSelectData(),
 }
