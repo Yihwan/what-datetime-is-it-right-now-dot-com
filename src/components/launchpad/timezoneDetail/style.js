@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER } from 'src/constants/style';
+import { COLORS } from 'src/constants/style';
 
 export const TimezoneDetailContainer = styled.section`
   overflow: auto;

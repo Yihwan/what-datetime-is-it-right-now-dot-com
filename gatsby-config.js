@@ -10,8 +10,20 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-root-import',
     'gatsby-plugin-lodash',
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `interestOverTime`,
+        path: `${__dirname}/src/content/searchTrends/interestOverTime`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `interestByGeography`,
+        path: `${__dirname}/src/content/searchTrends/interestByGeography`,
+      },
+    },
+    `gatsby-transformer-csv`,
   ],
 }

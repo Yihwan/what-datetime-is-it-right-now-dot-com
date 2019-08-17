@@ -1,14 +1,11 @@
 import { formatDateForLocale } from './international';
 
 export const TIMESTAMP_NAMES = {
-  localeDateString: 'Date String Locale',
+  localeDateString: 'Locale Date String',
   unix: 'UNIX',
   binary: 'Binary',
   hexadecimal: 'Hexadecimal',
   ISOString: 'ISO String',
-  UTCString: 'UTC String',
-  timeString: 'Time String',
-  militaryTime: 'Military Time',
 }
 
 const TIMESTAMP_ACTIONS = {

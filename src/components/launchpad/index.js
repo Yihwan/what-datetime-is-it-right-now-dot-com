@@ -6,6 +6,8 @@ import TimezoneDetail from './timezoneDetail';
 import NewsVideo from './newsVideo';
 import NewsMarquee from './newsMarquee';
 import NewsFeed from './newsFeed';
+import SearchTrends from './searchTrends';
+import RadarClock from './radarClock';
 
 import { LaunchpadContainer } from './style';
 
@@ -37,6 +39,7 @@ class Launchpad extends React.Component {
 
   render() {
     const { date } = this.state; 
+    const currentSeconds = date.getSeconds();
 
     return(
       <LaunchpadContainer>
@@ -45,7 +48,9 @@ class Launchpad extends React.Component {
         <TimezoneGrid date={date}/>
         <NewsVideo />
         <NewsMarquee />
+        <SearchTrends currentSeconds={currentSeconds} />
         <NewsFeed />
+        <RadarClock date={date} />
       </LaunchpadContainer>
     );
   }

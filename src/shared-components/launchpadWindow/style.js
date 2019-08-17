@@ -2,10 +2,9 @@ import styled from '@emotion/styled';
 import { COLORS, SPACER } from 'src/constants/style';
 
 export const WindowContainer = styled.div`
-  border: 1px solid ${COLORS.grey};
+  box-shadow:0 0 0 2px palegreen;
   padding: ${SPACER.xsmall};
   overflow: auto;
-  margin: 0.5px;
 `;
 
 export const WindowTitle = styled.div`
