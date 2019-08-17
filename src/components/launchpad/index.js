@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Home from './home';
 import TimestampSettings from './timestampSettings';
 import TimezoneGrid from './timezoneGrid';
 import TimezoneDetail from './timezoneDetail';
@@ -43,17 +44,20 @@ class Launchpad extends React.Component {
 
     return(
       <LaunchpadContainer>
+        <Home />
         <TimestampSettings />
-        <TimezoneDetail date={date}/>
-        <TimezoneGrid date={date}/>
-        <NewsVideo />
-        <NewsMarquee />
-        <SearchTrends currentSeconds={currentSeconds} />
-        <NewsFeed />
-        <RadarClock date={date} />
       </LaunchpadContainer>
     );
   }
 }
 
 export default Launchpad; 
+
+/* 
+<TimezoneDetail date={date}/>
+<TimezoneGrid date={date}/>
+<NewsVideo />
+<NewsMarquee />
+<SearchTrends currentSeconds={currentSeconds} />
+<NewsFeed />
+<RadarClock date={date} /> */

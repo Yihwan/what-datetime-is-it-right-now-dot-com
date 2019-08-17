@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'; 
+import { COLORS, SPACER } from 'src/constants/style';
 
 export const TimestampSettingsContainer = styled.section`
-  grid-column: 1 / 2; 
-  grid-row: 1 / 2; 
+
 `;
