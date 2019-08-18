@@ -3,8 +3,7 @@ import { COLORS } from 'src/constants/style';
 
 export const TimezoneDetailContainer = styled.section`
   overflow: auto;
-  grid-column: 2 / 3; 
-  grid-row: 1 / 2; 
+  max-height: 33vh;
 `;
 
 export const TimezoneDetailTable = styled.table`

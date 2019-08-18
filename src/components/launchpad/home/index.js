@@ -12,7 +12,7 @@ import {
 } from './style';
 
 const Home = () => (
-  <LaunchpadWindow title="What DATETIME Is It Right Now">
+  <LaunchpadWindow title="What DATETIME Is It Right Now" componentName="Home">
     <ActionContainer>
       <InnerContainer>
         <HomeLink href="/">Go Back</HomeLink>

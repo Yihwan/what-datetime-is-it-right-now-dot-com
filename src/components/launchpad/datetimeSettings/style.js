@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'; 
-import { COLORS, SPACER } from 'src/constants/style';
+import { SPACER } from 'src/constants/style';
 
 export const DatetimeSettingsContainer = styled.section`
   display: flex;

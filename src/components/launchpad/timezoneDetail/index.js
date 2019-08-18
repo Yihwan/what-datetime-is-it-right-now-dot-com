@@ -96,7 +96,7 @@ class TimezoneDetail extends React.Component {
     const homeLocOffsetUTC = moment.tz.zone(homeLoc.zone).parse(date) / 60;
 
     return(
-      <LaunchpadWindow title="TZ Detail">
+      <LaunchpadWindow title="TZ Detail" componentName="TimezoneDetail">
         <TimezoneDetailContainer>
           <TimezoneDetailTable>
             <thead>
@@ -134,7 +134,7 @@ class TimezoneDetail extends React.Component {
                   const homeLocOffset = homeLocOffsetUTC - (moment.tz.zone(loc.zone).parse(date) / 60);
                   const utcOffset = moment.tz.zone(loc.zone).parse(date) / 60;
 
-                  return(
+                  return (
                     <tr key={`${loc.city}-${idx}`}>
                       <td>{loc.city}</td>
                       <td>

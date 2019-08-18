@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Radar, RadarChart, PolarGrid, 
+  Radar, RadarChart, PolarGrid, ResponsiveContainer
 } from 'recharts';
 
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
@@ -61,14 +61,16 @@ class RadarClock extends React.Component {
     const { data } = this.state; 
 
     return(
-      <LaunchpadWindow title="Time Wheel Indicating Current Time">
+      <LaunchpadWindow title="Time Wheel Indicating Current Time" componentName="RadarClock">
         <RadarClockContainer>
-          <RadarChart innerRadius={7} outerRadius={100} width={250} height={250} data={data}>
-            <PolarGrid gridType="circle" />
-            <Radar isAnimationActive={false} name="currentSeconds" dataKey="seconds" stroke={COLORS.blooberbOrange} fill={COLORS.blooberbOrange} fillOpacity={0.6} />
-            <Radar isAnimationActive={false} name="currentMinutes" dataKey="minutes" stroke={COLORS.greenL1} fill={COLORS.green} fillOpacity={0.6} />
-            <Radar isAnimationActive={false} name="currentHours" dataKey="hours" stroke={COLORS.red} fill={COLORS.red} fillOpacity={0.6} />
-          </RadarChart>
+          <ResponsiveContainer width="100%" height={250} >
+            <RadarChart innerRadius={7} outerRadius={100} data={data}>
+              <PolarGrid gridType="circle" />
+              <Radar isAnimationActive={false} name="currentSeconds" dataKey="seconds" stroke={COLORS.blooberbOrange} fill={COLORS.blooberbOrange} fillOpacity={0.6} />
+              <Radar isAnimationActive={false} name="currentMinutes" dataKey="minutes" stroke={COLORS.greenL1} fill={COLORS.green} fillOpacity={0.6} />
+              <Radar isAnimationActive={false} name="currentHours" dataKey="hours" stroke={COLORS.red} fill={COLORS.red} fillOpacity={0.6} />
+            </RadarChart>
+          </ResponsiveContainer>
         </RadarClockContainer>
       </LaunchpadWindow>
     );

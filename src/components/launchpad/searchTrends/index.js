@@ -34,7 +34,7 @@ class SearchTrends extends React.Component {
     const { selectedTabIndex } = this.state; 
 
     return(
-      <LaunchpadWindow title="Search Trends">
+      <LaunchpadWindow title="Search Trends" componentName="SearchTrends">
         <SearchTrendsContainer>
           <Tabs selectedIndex={selectedTabIndex} onSelect={this.handleSelect}>
             <TabList>

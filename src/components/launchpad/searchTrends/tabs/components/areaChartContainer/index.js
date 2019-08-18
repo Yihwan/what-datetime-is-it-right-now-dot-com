@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip,
 } from 'recharts';
 
 import { COLORS } from 'src/constants/style';
@@ -16,9 +16,12 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const AreaChartContainer = ({ data }) => (
-  <AreaChart
-    width={500}
+  <ResponsiveContainer
+    width="100%"
     height={200}
+  >
+  <AreaChart
+
     data={data}
     margin={{
       top: 10, right: 30, left: 0, bottom: 0,
@@ -40,6 +43,7 @@ const AreaChartContainer = ({ data }) => (
       fill="url(#colorTrend)"
     />
   </AreaChart>
+  </ResponsiveContainer>
 );
 
 export default AreaChartContainer; 

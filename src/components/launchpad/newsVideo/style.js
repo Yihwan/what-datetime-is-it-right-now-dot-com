@@ -1,9 +1,16 @@
 import styled from '@emotion/styled';
+import { MEDIA_QUERIES } from 'src/constants/style';
+
+export const GridHelper = styled.div`
+  display: flex; 
+  min-height: 0;
+  ${MEDIA_QUERIES.mdUp} {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+`;
 
 export const NewsVideoContainer = styled.section`
-  grid-column: 1 / 2; 
-  grid-row: 2 / 3; 
-
   overflow: hidden; 
   padding-top: 56.25%; 
   position: relative;

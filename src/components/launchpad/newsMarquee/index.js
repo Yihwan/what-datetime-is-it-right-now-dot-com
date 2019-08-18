@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { MarqueeContainer } from './style';
+
 const MARQUEE_SNIPPETS = [
   'Bring Back the Marquee Tag, Disgruntled Nerds Demand', 
   'Your Daily Updates Brought to You by Bojack and SimCity', 
@@ -61,7 +63,9 @@ const MARQUEE_SNIPPETS = [
 
 const NewsMarquee = () => (
   /* eslint-disable-next-line */
-  <marquee>{MARQUEE_SNIPPETS.join('\xa0\xa0\xa0')}</marquee>
+  <MarqueeContainer>
+    <marquee>{MARQUEE_SNIPPETS.join('\xa0\xa0\xa0')}</marquee>
+  </MarqueeContainer>
 );
 
 export default NewsMarquee;

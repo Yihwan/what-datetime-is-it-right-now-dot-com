@@ -1,8 +1,8 @@
+
 import styled from '@emotion/styled';
 import { COLORS, SPACER } from 'src/constants/style';
 
 export const SearchTrendsContainer = styled.section`
-
 
   .react-tabs__tab-list {
     display: flex; 

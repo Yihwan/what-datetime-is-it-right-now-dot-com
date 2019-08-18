@@ -6,6 +6,7 @@ import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 
 import { TimezoneGridContainer, TimezoneGridTable, ColorableCell } from './style';
 
+// TODO-YK: Utils.
 const randomInt = max => (
   Math.floor(Math.random() * Math.floor(max))
 );
@@ -39,7 +40,7 @@ class TimezoneGrid extends React.Component {
     const { selectedZones } = this.state; 
 
     return(
-      <LaunchpadWindow title="TZ Grid">
+      <LaunchpadWindow title="TZ Grid" componentName="TimezoneGrid">
         <TimezoneGridContainer>
           <TimezoneGridTable>
             <thead>
@@ -59,10 +60,10 @@ class TimezoneGrid extends React.Component {
             </thead>
             <tbody>
               {selectedZones.map(zone => {
-                return(
+                return (
                   <tr key={zone}>
                     <td>{zone}</td>
-                    {[...Array(25)].map((_, idx) => (                  
+                    {[...Array(25)].map((_, idx) => (
                       <ColorableCell key={idx} rand={randomInt(4)}>
                         <pre>{moment().tz(zone).add(idx, 'hours').format('HH:mm[\n]MM/DD')}</pre>
                       </ColorableCell>

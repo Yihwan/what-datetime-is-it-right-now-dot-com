@@ -41,11 +41,11 @@ class DatetimeSettings extends React.Component {
     const { date } = this.props;
 
     return (
-      <LaunchpadWindow title="DATETIME Settings">
+      <LaunchpadWindow title="DATETIME Settings" componentName="DatetimeSettings">
         <DatetimeSettingsContainer>
           <TileColumn title="Locale">
             {localeData.map(data => (
-              <Tile 
+              <Tile
                 type={data.type}
                 datetimeKey={data.datetimeKey}
                 value={data.value}

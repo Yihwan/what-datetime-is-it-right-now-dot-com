@@ -10,7 +10,7 @@ import NewsFeed from './newsFeed';
 import SearchTrends from './searchTrends';
 import RadarClock from './radarClock';
 
-import { LaunchpadContainer } from './style';
+import { LaunchpadContainer, Column } from './style';
 
 class Launchpad extends React.Component {
   state = {
@@ -46,18 +46,17 @@ class Launchpad extends React.Component {
       <LaunchpadContainer>
         <Home />
         <DatetimeSettings date={date} toggleLocalStorageUpdated={this.toggleLocalStorageUpdated} />
+        <NewsVideo />
+        <NewsMarquee />
+        <NewsFeed />
+        <RadarClock date={date} />
+        <TimezoneDetail date={date} />
+        <SearchTrends currentSeconds={currentSeconds} />
+        <TimezoneGrid date={date} />
+
       </LaunchpadContainer>
     );
   }
 }
 
 export default Launchpad; 
-
-/* 
-<TimezoneDetail date={date}/>
-<TimezoneGrid date={date}/>
-<NewsVideo />
-<NewsMarquee />
-<SearchTrends currentSeconds={currentSeconds} />
-<NewsFeed />
-<RadarClock date={date} /> */

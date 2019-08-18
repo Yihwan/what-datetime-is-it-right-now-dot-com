@@ -10,11 +10,11 @@ const RANDOM_COLORS = [
 
 export const TimezoneGridContainer = styled.section`
   overflow: auto;
-  grid-column: 3 / 4; 
-  grid-row: 1 / 2; 
+  max-height: 33vh;
 `;
 
 export const TimezoneGridTable = styled.table`
+  overflow: hidden ;
   border-collapse: separate;
 
   thead {
