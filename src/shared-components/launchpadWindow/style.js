@@ -12,8 +12,26 @@ export const WindowContainer = styled.div`
   align-items: stretch;
 `;
 
+export const Menu = styled.div`
+  display: flex; 
+  justify-content: space-between;
+`;
+
+export const ControlButton = styled.button`
+  padding: 0 ${SPACER.small};
+
+  margin-top: -${SPACER.xsmall};
+  background-color: transparent;
+  color: ${COLORS.greyL1};
+  border: none;
+
+  &:focus {
+    outline: ${SPACER.x2small} solid ${COLORS.blooberbOrange};
+  }
+`;
+
 export const WindowTitle = styled.div`
-  color: ${COLORS.grey};
+  color: ${COLORS.greyL1};
   margin-bottom: ${SPACER.small};
 `;
 

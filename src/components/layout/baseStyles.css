@@ -1,7 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap'); */
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
 body {
-  font-size: 0.85rem;
+  font-size: 1rem;
   background-color: #000000;
   color: white;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus {
+  outline: 2px solid #f3a246;
 }

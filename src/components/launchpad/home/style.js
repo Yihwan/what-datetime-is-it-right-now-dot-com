@@ -30,8 +30,7 @@ export const CurrentTimeContainer = styled.div`
   color: ${COLORS.black};
 `;
 
-export const A3Z = styled.button`
+export const AZ5Button = styled.button`
   background-color: ${COLORS.red};
   color: ${COLORS.white};
-  cursor: pointer;
 `;

@@ -9,7 +9,6 @@ export const TileButton = styled.button`
   border: none;
   text-align: left; 
   color: ${COLORS.white};
-  cursor: pointer;
   overflow: hidden;
   
   padding: ${SPACER.xsmall};
