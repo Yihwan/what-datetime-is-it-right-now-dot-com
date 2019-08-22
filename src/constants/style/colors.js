@@ -15,6 +15,7 @@ const COLORS = {
   blueL1: '#72acf8',
   blue: '#1f75f6',
   blueD1: '#2e4c6d',
+  purple: '#121040',
 };
 
 export default COLORS; 

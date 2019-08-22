@@ -2,7 +2,8 @@ import styled from '@emotion/styled';
 import { COLORS, SPACER } from 'src/constants/style';
 
 export const AZ5SequenceContainer = styled.div`
-  position: absolute; 
+  position: fixed; 
+  z-index: 100;
   top: 50%; 
   left: 50%;
   transform: translate(-50%, -50%);
@@ -13,15 +14,20 @@ export const AZ5SequenceContainer = styled.div`
 
   max-height: 90%;
   min-height: 55vh;
-
+  
   > div:first-of-type {
     background-color: ${COLORS.red};
     padding: ${SPACER.xsmall} ${SPACER.small};
   }
+  
+  > div {
+    padding: 0 ${SPACER.small};
+  }
 `;
 
 export const SkullContainer = styled.div`
-  position: absolute;
+  position: fixed;
+  z-index: 1;
   top: 0; 
   left: 0;
   height: 100vh; 
@@ -32,5 +38,5 @@ export const SkullContainer = styled.div`
   justify-content: center; 
   align-items: center; 
 
-  font-size: 5rem;
+  font-size: 4rem;
 `;

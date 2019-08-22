@@ -37,13 +37,14 @@ class InitiateAZ5Sequence extends React.Component {
     sequenceRussianIdx: 0, 
     sequenceEnglishIdx: 0, 
     sequence: [
-      'initiating A3-5',
+      'Initiating A3-5',
     ],
     shouldShowSkull: false, 
+    shouldEquivocate: false, 
   }
 
   componentDidMount() {
-    setTimeout(() => setInterval(() => this.shortenInterval(), 100), 3000);
+    setTimeout(() => setInterval(() => this.shortenInterval(), 100), 2000);
   }
 
   componentWillUnmount() {
@@ -75,19 +76,26 @@ class InitiateAZ5Sequence extends React.Component {
       return;
     }
 
-    this.setState({ shouldShowSkull: true });
-    debugger;
+    this.setState({ shouldEquivocate: true });
+    
+    window.setTimeout(this.setState({ shouldShowSkull: true }), 3000);
+    
     clearInterval(this.timer);
-    window.setTimeout(() => this.props.activateAZ5(), 2000);
+    window.setTimeout(() => this.props.activateAZ5(), 3000);
   }
 
   render() {
-    const { sequence, shouldShowSkull } = this.state; 
+    const { sequence, shouldShowSkull, shouldEquivocate } = this.state; 
 
 
     if (shouldShowSkull) {
-      return <SkullContainer>&#x2620;</SkullContainer>
+      return <SkullContainer>&#9760;</SkullContainer>
     }
+
+    if (shouldEquivocate) {
+      return <SkullContainer>не здорово не ужасно</SkullContainer>;
+    }
+
     return(
       <AZ5SequenceContainer>
         {sequence.map(word => (

@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER, MEDIA_QUERIES } from 'src/constants/style';
+import { COLORS, SPACER, MEDIA_QUERIES, TYPOGRAPHY } from 'src/constants/style';
 
 
 export const WindowContainer = styled.div`
@@ -10,6 +10,8 @@ export const WindowContainer = styled.div`
   box-sizing: border-box;
   width: 100%;
   align-items: stretch;
+
+  position: relative;
 `;
 
 export const Menu = styled.div`
@@ -33,6 +35,7 @@ export const ControlButton = styled.button`
 export const WindowTitle = styled.div`
   color: ${COLORS.greyL1};
   margin-bottom: ${SPACER.small};
+  font-size: ${TYPOGRAPHY.FONT_SIZE.label};
 `;
 
 

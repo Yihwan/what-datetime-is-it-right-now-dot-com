@@ -38,18 +38,18 @@ class SearchTrends extends React.Component {
         <SearchTrendsContainer>
           <Tabs selectedIndex={selectedTabIndex} onSelect={this.handleSelect}>
             <TabList>
-              <Tab>WHO</Tab>
-              <Tab>WHAT</Tab>
-              <Tab>WHEN</Tab>
-              <Tab>WHERE</Tab>
-              <Tab>WHY</Tab>
+              <Tab>Who</Tab>
+              <Tab>What</Tab>
+              <Tab>When</Tab>
+              <Tab>Where</Tab>
+              <Tab>Why</Tab>
             </TabList>
 
-            <TabPanel><WhoAreYou /></TabPanel>
-            <TabPanel><WhatAmI /></TabPanel>
-            <TabPanel><WhereAmIRightNow /></TabPanel>
-            <TabPanel><WhatDateTimeIsItRightNow /></TabPanel>
-            <TabPanel><ButWhy /></TabPanel>
+            <TabPanel><WhoAreYou searchTerm="who are you" /></TabPanel>
+            <TabPanel><WhatAmI searchTerm="what is this" /></TabPanel>
+            <TabPanel><WhatDateTimeIsItRightNow searchTerm="what date time is it right now" /></TabPanel>
+            <TabPanel><WhereAmIRightNow searchTerm="where am i right now" /></TabPanel>
+            <TabPanel><ButWhy searchTerm="but why" /></TabPanel>
           </Tabs>
         </SearchTrendsContainer>
       </LaunchpadWindow>

@@ -14,7 +14,7 @@ export const GridHelper = styled.div`
 
 export const MarqueeContainer = styled.div`
   font-size: 1rem;
-  padding: ${SPACER.xsmall} 0;
-  background-color: ${COLORS.blue};
+  padding: ${SPACER.small} 0;
+  background-color: ${COLORS.purple};
   color: ${COLORS.white};
 `;

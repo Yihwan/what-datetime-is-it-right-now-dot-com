@@ -1,13 +1,14 @@
-/* @import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500&display=swap'); */
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,700&display=swap'); 
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700&display=swap');
-/* @import url('https://fonts.googleapis.com/css?family=Oxygen+Mono&display=swap'); */
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
 body {
   font-size: 1rem;
+  font-weight: 400;
   background-color: #000000;
   color: white;
+  letter-spacing: 0.02em;
 }
 
 button {

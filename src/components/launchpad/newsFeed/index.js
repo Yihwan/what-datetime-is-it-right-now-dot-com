@@ -22,8 +22,8 @@ const NewsFeed = () => (
         <TabList>
           <Tab>DATETIME</Tab>
           <Tab>Business</Tab>
-          <Tab>Tech</Tab>
-          <Tab>Insights</Tab>
+          <Tab>World</Tab>
+          <Tab>Politics</Tab>
         </TabList>
 
         <BlooberbBar />
@@ -33,9 +33,21 @@ const NewsFeed = () => (
             <NewsArticleComponent article={article}/>
           ))}
         </TabPanel>
-        <TabPanel>world</TabPanel>
-        <TabPanel>world</TabPanel>
-        <TabPanel>world</TabPanel>
+        <TabPanel>
+          {ARTICLES['business'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
+            <NewsArticleComponent article={article} />
+          ))}
+        </TabPanel>
+        <TabPanel>
+          {ARTICLES['world'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
+            <NewsArticleComponent article={article} />
+          ))}
+        </TabPanel>
+        <TabPanel>
+          {ARTICLES['politics'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
+            <NewsArticleComponent article={article} />
+          ))}
+        </TabPanel>
       </Tabs>
     </NewsFeedContainer>
   </LaunchpadWindow>
@@ -56,11 +68,12 @@ const NewsArticleComponent = ({ article }) => (
               </Source>
       </Title>
       {article.excerpt && <Excerpt>{article.excerpt}</Excerpt>}
-      <Bullets>
+      
+      {article.bullets && <Bullets>
         {article.bullets.map(bullet => (
           <li key={bullet}><span>{bullet}</span></li>
         ))}
-      </Bullets>
+      </Bullets>}
     </div>
   </NewsArticle>
 )

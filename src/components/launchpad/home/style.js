@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 import { COLORS, SPACER, MEDIA_QUERIES } from 'src/constants/style';
 
-export const GridHelper = styled.div`
-
-`;
-
-
 export const ActionContainer = styled.div`
   display: flex; 
   justify-content: space-between;
@@ -18,7 +13,7 @@ export const InnerContainer = styled.div`
 
 export const HomeLink = styled.a`
   background-color: ${COLORS.greyL1};
-  padding: 1px ${SPACER.small};
+  padding: ${SPACER.x2small} ${SPACER.small};
   color: ${COLORS.white};
   text-decoration: none;
   margin-right: ${SPACER.x2small};
@@ -26,7 +21,7 @@ export const HomeLink = styled.a`
 
 export const CurrentTimeContainer = styled.div`
   background-color: ${COLORS.blooberbOrange};
-  padding: 1px ${SPACER.small};
+  padding: ${SPACER.x2small} ${SPACER.small};
   color: ${COLORS.black};
 `;
 

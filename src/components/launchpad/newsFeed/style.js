@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER } from 'src/constants/style';
+import { COLORS, SPACER, TYPOGRAPHY } from 'src/constants/style';
 
 export const NewsFeedContainer = styled.section`
   line-height: 1.15;
 
   .react-tabs__tab-list {
     display: flex;
-    font-size: 0.9rem;
+    font-size: ${TYPOGRAPHY.FONT_SIZE.label};
   }
 
   .react-tabs__tab {
