@@ -3,6 +3,7 @@ import { COLORS, SPACER, TYPOGRAPHY } from 'src/constants/style';
 
 export const NewsFeedContainer = styled.section`
   line-height: 1.15;
+  max-height: 50vh;
 
   .react-tabs__tab-list {
     display: flex;

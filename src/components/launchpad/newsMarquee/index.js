@@ -64,7 +64,7 @@ const MARQUEE_SNIPPETS = [
 const NewsMarquee = () => (
   /* eslint-disable-next-line */
   <MarqueeContainer>
-    <marquee>{MARQUEE_SNIPPETS.join('\xa0\xa0\xa0')}</marquee>
+    <marquee scrolldelay="60" scrollamount="4">{MARQUEE_SNIPPETS.join('\xa0\xa0\xa0')}</marquee>
   </MarqueeContainer>
 );
 

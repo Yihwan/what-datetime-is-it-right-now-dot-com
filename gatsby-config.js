@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `DATETIME Optimized`,
-    description: `DATETIME Optimized`,
+    title: `What Date Time Is It Right Now`,
+    description: `A site that tells you what date and time it is right now.`,
     author: `Yihwan Kim`,
   },
   plugins: [

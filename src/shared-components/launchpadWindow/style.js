@@ -96,7 +96,7 @@ const GRID_HELPER = {
       grid-row: 1 / 3;
     }
     
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 2 / 3;
       grid-row: 1 / 3
       ;
@@ -107,7 +107,7 @@ const GRID_HELPER = {
       grid-column: 2 / 3;
       grid-row: 3 / 5;
     }
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 2 / 3;
       grid-row: 3 / 5;
     }
@@ -117,7 +117,7 @@ const GRID_HELPER = {
       grid-column: 1 / 2;
       grid-row: 4 / 5;
     }
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 1 / 2;
       grid-row: 4 / 6;
     }
@@ -127,7 +127,7 @@ const GRID_HELPER = {
       grid-column: 1 / 2;
       grid-row: 5 / 6;
     }
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 3 / 4;
       grid-row: 1 / 3;
     }
@@ -137,7 +137,7 @@ const GRID_HELPER = {
       grid-column: 2 / 3;
       grid-row: 5 / 6;
     }
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 3 / 4;
       grid-row: 3 / 5;
     }  
@@ -147,7 +147,7 @@ const GRID_HELPER = {
       grid-column: 1 / 3;
       grid-row: 6 / 7;
     }
-    ${MEDIA_QUERIES.lgUp} {
+    ${MEDIA_QUERIES.xlUp} {
       grid-column: 2 / 4;
       grid-row: 5 / 6;
     }  

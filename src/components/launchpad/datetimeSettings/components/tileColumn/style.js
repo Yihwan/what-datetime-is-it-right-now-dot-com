@@ -1,11 +1,18 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER, TYPOGRAPHY } from 'src/constants/style';
+import { COLORS, SPACER, TYPOGRAPHY, MEDIA_QUERIES } from 'src/constants/style';
 
 export const TileColumnContainer = styled.div`
   width: 25%;
   max-width: 150px; 
-  min-height: 29vh; 
-  max-height: 29vh;
+  max-height: 28vh;
+
+  ${MEDIA_QUERIES.lgUp} {
+    max-height: 40vh;
+  }
+
+  ${MEDIA_QUERIES.xlUp} {
+    max-height: 30vh;
+  }
 
   box-sizing: border-box;
   overflow-y: auto;

@@ -15,7 +15,7 @@ export const LaunchpadContainer = styled.main`
     grid-template-rows: repeat(6, min-content);
   }
 
-  ${MEDIA_QUERIES.lgUp} {
+  ${MEDIA_QUERIES.xlUp} {
     grid-template-columns: minmax(250px, 30vw) minmax(20vw, 30vw) minmax(35%, 1fr);
     grid-template-rows: min-content minmax(25vh, 1fr) min-content minmax(20vh, 1fr) minmax(33vh, 1fr);
     max-height: 100vh;

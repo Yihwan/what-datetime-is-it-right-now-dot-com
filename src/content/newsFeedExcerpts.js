@@ -34,7 +34,7 @@ const BREAKING = [
   },
   {
     srcUrl: 'https://whattimeisitrightnow.com',
-    srcName: 'PR',
+    srcName: 'PR Wire',
     timePublished: '2320',
     title: 'WhatTimeIsItRightNow.com finalizes merger, rebrands as WhatDatetimeIsItRightNow.com',
   },
@@ -44,6 +44,16 @@ const BREAKING = [
     timePublished: '0820',
     title: 'Time capsule from 50 years ago has nothing inside',
     excerpt: 'DERRY, N.H. (AP) — Officials in a New Hampshire town are trying to figure out how a recently opened time capsule from 50 years ago has nothing in it',
+  },
+  {
+    srcUrl: 'https://github.com/Yihwan/what-datetime-is-it-right-now-dot-com',
+    srcName: 'GitHub',
+    timePublished: '2321',
+    title: 'Rogue intern publishes source code to WhatDatetimeIsItRightNow.com',
+    bullets: [
+      "Intern reportedly upset that coconut water in company canteen not cage-free",
+      "CEO orders IT department to turn off and unplug computer monitors to prevent further leaks",
+    ],
   },
 ];
 
