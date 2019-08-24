@@ -4,7 +4,13 @@ import 'moment-timezone';
 
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 
-import { TimezoneGridContainer, TimezoneGridTable, ColorableCell } from './style';
+import { 
+  TimezoneGridContainer, 
+  TimezoneGridTable, 
+  ColorableCell, 
+  ModalContainer, 
+  ActivateButton,
+} from './style';
 
 // TODO-YK: Utils.
 const randomInt = max => (
@@ -30,17 +36,38 @@ class TimezoneGrid extends React.Component {
       'Pacific/Palau',
       'Australia/Melbourne',
     ],
+    isAnimationActive: false, 
   }
 
-  shouldComponentUpdate(prevProps) {
-    return prevProps.date.getSeconds() % 8 === 0;
+  shouldComponentUpdate(prevProps, prevState) {
+    if (prevState.isAnimationActive !== this.state.isAnimationActive) {
+      return true;
+    }
+    
+    if (!this.state.isAnimationActive) {
+      return false; 
+    }
+
+    return prevProps.date.getSeconds() % 5 === 0;
   }
 
   render() {
-    const { selectedZones } = this.state; 
+    const { selectedZones, isAnimationActive } = this.state; 
 
     return(
-      <LaunchpadWindow title="TZ Grid" componentName="TimezoneGrid">
+      <LaunchpadWindow 
+        title="TZ Grid" 
+        componentName="TimezoneGrid"
+        optionsHeader="Activate grid animation"
+        optionsContent={
+          <ModalContainer>
+            Animation: {isAnimationActive ? 'Active' : 'Not Active'} <br /><br />
+            Click the button below to update grid colors every 5 seconds. Not recommended for users prone to epilepsy or seizures. Refresh the page or click below to de-activate animation.
+            <ActivateButton onClick={() => this.setState({ isAnimationActive: true })}>Activate Animation</ActivateButton>
+            <ActivateButton onClick={() => this.setState({ isAnimationActive: false })}>De-Activate Animation</ActivateButton>
+          </ModalContainer>
+        }
+      >
         <TimezoneGridContainer>
           <TimezoneGridTable>
             <thead>

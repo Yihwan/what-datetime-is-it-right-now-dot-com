@@ -30,14 +30,13 @@ export const customModalStyles = {
 
 export const WindowContainer = styled.div`
   ${({ componentName }) => GRID_HELPER[componentName]};
-  box-shadow:0 0 0 2px ${COLORS.grey};
+  box-shadow: 0 0 0 2px ${COLORS.grey};
   padding: ${SPACER.small} ${SPACER.xsmall};
   padding-top: 0; 
   overflow: auto;
   box-sizing: border-box;
   width: 100%;
   align-items: stretch;
-
   position: relative;
 `;
 

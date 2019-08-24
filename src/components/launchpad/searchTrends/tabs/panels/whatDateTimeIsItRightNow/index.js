@@ -1,8 +1,9 @@
 import React from 'react';
 
+import InterestByGeography from './interestByGeography';
 import InterestOverTime from './interestOverTime';
 
-import { SearchTerm } from '../style';
+import { SearchTerm, TabPanelContent } from '../style';
 
 const WhatDateTimeIsItRightNow = ({ searchTerm }) => (
   <>
@@ -10,7 +11,10 @@ const WhatDateTimeIsItRightNow = ({ searchTerm }) => (
       <div>Keyword search ></div>
       <div>{searchTerm}</div>
     </SearchTerm>
-    <InterestOverTime />
+    <TabPanelContent>
+      <InterestOverTime />
+      <InterestByGeography />
+    </TabPanelContent>
   </>
 )
 

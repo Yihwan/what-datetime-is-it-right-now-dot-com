@@ -5,7 +5,8 @@ import InterestByGeography from './interestByGeography';
 
 import { SearchTerm, TabPanelContent } from '../style';
 
-const WhoAreYou = ({ searchTerm }) => (
+// https://trends.google.com/trends/explore?date=all&geo=US&q=what%20is%20this
+const WhatIsThis = ({ searchTerm }) => (
   <>
     <SearchTerm>
       <div>Keyword search ></div>
@@ -18,4 +19,4 @@ const WhoAreYou = ({ searchTerm }) => (
   </>
 )
 
-export default WhoAreYou;
+export default WhatIsThis;

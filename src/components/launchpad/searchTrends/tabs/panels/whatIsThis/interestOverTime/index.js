@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from 'gatsby';
 import AreaChartContainer from '../../../components/areaChartContainer';
 
 const InterestOverTime = () => {
-  const { allWhatAmICsv } = useStaticQuery(
+  const { allWhatIsThisCsv } = useStaticQuery(
     graphql`
       query { 
-        allWhatAmICsv {
+        allWhatIsThisCsv {
           edges {
             node {
               time, 
@@ -19,7 +19,7 @@ const InterestOverTime = () => {
     `
   );
 
-  const data = allWhatAmICsv.edges.map(edge => (
+  const data = allWhatIsThisCsv.edges.map(edge => (
     {
       name: edge.node.time,
       interest: parseInt(edge.node.interest, 10),

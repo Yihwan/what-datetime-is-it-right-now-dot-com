@@ -65,3 +65,26 @@ export const ColorableCell = styled.td`
   padding: 1px ${SPACER.x2small} 1px ${SPACER.large};
   color: ${COLORS.whiteD1};
 `;
+
+export const ModalContainer = styled.div`
+  padding: ${SPACER.base} ${SPACER.large};
+  width: 100%; 
+  box-sizing: border-box;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+  line-height: 1.15;
+`;
+
+export const ActivateButton = styled.button`
+  padding: ${SPACER.small} ${SPACER.base};
+  font-size: ${TYPOGRAPHY.FONT_SIZE.label};
+  margin-top: ${SPACER.base};
+  background-color: ${COLORS.purple};
+  color: ${COLORS.white};
+  border: 2px solid ${COLORS.blooberbOrange};
+
+  &:focus {
+    outline: ${SPACER.x2small} solid ${COLORS.blooberbOrange};
+  }
+`;

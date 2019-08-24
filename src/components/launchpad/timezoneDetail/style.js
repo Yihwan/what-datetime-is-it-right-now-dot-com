@@ -13,6 +13,7 @@ export const TimezoneDetailTable = styled.table`
   thead {
     background-color: ${COLORS.grey};
     color: ${COLORS.whiteD1};
+    border: 1px solid ${COLORS.greyD1};
 
     th {
       padding:${SPACER.xsmall} ${SPACER.x2small};
@@ -32,6 +33,7 @@ export const TimezoneDetailTable = styled.table`
 
   tbody {
     color: ${COLORS.blooberbOrange};
+    border: 1px solid transparent;
 
     td {
       padding: 1px ${SPACER.x2small};

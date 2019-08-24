@@ -19,7 +19,7 @@ const LaunchpadWindow = ({ title, children, componentName, optionsHeader, option
 
   return(
     <>
-      <WindowContainer componentName={componentName}>
+      <WindowContainer componentName={componentName} >
         <Menu>
           <WindowTitle>{title}</WindowTitle>
           <div>

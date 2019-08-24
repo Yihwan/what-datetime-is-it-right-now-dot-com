@@ -89,7 +89,7 @@ class InitiateAZ5Sequence extends React.Component {
 
 
     if (shouldShowSkull) {
-      return <SkullContainer>&#9760;</SkullContainer>
+      return <SkullContainer>&#9760;&nbsp; не здорово не ужасно &nbsp;&#9760;</SkullContainer>
     }
 
     if (shouldEquivocate) {

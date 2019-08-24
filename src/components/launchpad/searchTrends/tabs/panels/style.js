@@ -18,3 +18,11 @@ export const SearchTerm = styled.div`
     min-width: 270px;
   }
 `;
+
+export const TabPanelContent = styled.div`
+  position: absolute; 
+  height: calc(100% - 110px);
+  width: 100%;
+
+  display: flex; 
+`;

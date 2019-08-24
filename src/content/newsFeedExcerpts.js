@@ -1,20 +1,3 @@
-/*
-  https://apnews.com/5adaacef468642c4930d1ad76ff09b69
-
-  https://news.cgtn.com/news/3d3d774e3263544f33457a6333566d54/index.html
-  https://news.cgtn.com/news/3d3d774e3263544f33457a6333566d54/index.html
-  https://news.avclub.com/fec-declares-kid-rock-couldnt-have-run-for-senate-as-k-1830658934
-  https://thehill.com/policy/technology/420838-google-ceo-responds-to-steve-king-concerns-about-granddaughters-iphone
-  https://philadelphia.cbslocal.com/2018/11/28/payless-palessi-opens-fake-luxury-store-experiment-sells-customers-expensive-shoes-luxury-adweek-marketing/
-  payless bankruptcy
-  https://thehill.com/homenews/house/392756-poll-kim-jong-un-has-higher-approval-among-republicans-than-pelosi
-*/
-export const CATEGORIES = [
-  'breaking',
-  'world',
-  'business'
-];
-
 const BREAKING = [
   {
     srcUrl: 'https://local.theonion.com/mom-on-vacation-marveling-at-time-difference-compared-t-1819579250',
@@ -48,6 +31,19 @@ const BREAKING = [
       'Traditional cuckoo clock accurate to depths of 3,000m',
       'Rolex reportedly collaborating with Apple to integrate new cuckoo technology for next Apple Watch',
     ],
+  },
+  {
+    srcUrl: 'https://whattimeisitrightnow.com',
+    srcName: 'PR',
+    timePublished: '2320',
+    title: 'WhatTimeIsItRightNow.com finalizes merger, rebrands as WhatDatetimeIsItRightNow.com',
+  },
+  {
+    srcUrl: 'https://apnews.com/34a27b5179dd4fce8f38c6b6e8ba7a17',
+    srcName: 'AP',
+    timePublished: '0820',
+    title: 'Time capsule from 50 years ago has nothing inside',
+    excerpt: 'DERRY, N.H. (AP) — Officials in a New Hampshire town are trying to figure out how a recently opened time capsule from 50 years ago has nothing in it',
   },
 ];
 
@@ -177,7 +173,21 @@ const POLITICS = [
     srcName: 'The Hill',
     timePublished: '1018',
     title: "Poll: Kim Jong Un has higher approval among Republicans than Pelosi",
-    excerpt: "More Republicans view North Korean leader Kim Jong Un favorably than do House Minority Leader Nancy Pelosi (D-Calif.), according to a poll released Monday.",
+    excerpt: "More Republicans view North Korean leader Kim Jong Un favorably than do House Minority Leader Nancy Pelosi (D-Calif.), according to a poll released Monday",
+  },   
+  {
+    srcUrl: 'https://www.washingtonpost.com/news/powerpost/wp/2017/10/24/kid-rock-says-senate-campaign-was-a-stunt/',
+    srcName: 'Washington Post',
+    timePublished: '1200',
+    title: "Kid Rock says Senate ‘campaign’ was a stunt",
+    excerpt: "“F‑‑‑ no, I’m not running for Senate. Are you kidding me?” Kid Rock said on Stern’s SiriusXM show. “Who couldn’t figure that out? I’m releasing a new album. I’m going on tour, too”",
+  },   
+  {
+    srcUrl: 'https://apnews.com/5adaacef468642c4930d1ad76ff09b69',
+    srcName: 'AP',
+    timePublished: '2020',
+    title: "Florida candidate says alien abduction doesn’t define her",
+    excerpt: "MIAMI (AP) — U.S. House candidate Bettina Rodriguez Aguilera has a long list of accomplishments to bolster her campaign in Florida. But she is perhaps best known for claiming that she was abducted by space aliens as a child",
   },   
 ];
 
