@@ -79,10 +79,10 @@ class RadarClock extends React.Component {
           Remaining Seconds (RS) <span>{remainingSeconds}</span>
         </Label>
         <Label topPercent="18%" leftPercent="10%" color={COLORS.greenL1}>
-          Elapsed Minutes (EM) <span>{elapsedMinutes}</span>
+          Remaining Minutes (RM) <span>{remainingMinutes}</span>
         </Label>
         <Label topPercent="78%" leftPercent="72%" color={COLORS.greenL1}>
-          Remaining Minutes (RM) <span>{remainingMinutes}</span>
+          Elapsed Minutes (EM) <span>{elapsedMinutes}</span>
         </Label>
         <Label topPercent="48%" leftPercent="8%" color={COLORS.red}>
           Remaining Hours (RH) <span>{remainingHours}</span>

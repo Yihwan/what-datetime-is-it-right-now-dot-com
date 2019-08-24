@@ -1,15 +1,23 @@
 import React from 'react';
 
+import { DEFAULTS } from 'src/constants/international';
 import TIMESTAMP_ACTIONS from 'src/constants/timestamp';
 
 class Timestamp extends React.Component {
   state = {
     date: new Date(),
     localStorageUpdated: false, 
+    datetimeSettings: {...DEFAULTS},
   }
 
   componentDidMount = () => {
     this.timer = setInterval(() => this.tick(), 1000);
+    this.setState(
+      Object.assign(
+        this.state.datetimeSettings, JSON.parse(localStorage.getItem('datetimeSettings'))
+      ));
+    localStorage.setItem('datetimeSettings', JSON.stringify(this.state.datetimeSettings));
+
     window.addEventListener('storage', this.toggleLocalStorageUpdated);
   }
 
@@ -29,7 +37,6 @@ class Timestamp extends React.Component {
   }
 
   output = date => {
-    // TODO-YK: Fix this shit. 
     if (typeof window === 'undefined') return;
     
     if (!JSON.parse(localStorage.getItem('datetimeSettings'))) return;
@@ -51,7 +58,6 @@ class Timestamp extends React.Component {
 
   render() {
     const { date } = this.state;
-
     return (
       <div>
         {this.output(date)}

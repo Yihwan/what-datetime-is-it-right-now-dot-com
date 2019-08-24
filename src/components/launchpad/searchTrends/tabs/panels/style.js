@@ -8,7 +8,7 @@ export const SearchTerm = styled.div`
   color: ${COLORS.white};
   margin: ${SPACER.small} ${SPACER.xsmall};
 
-  > div:last-of-type {
+  > div:nth-of-type(2) {
     background-color: ${COLORS.blooberbOrange};
     color: ${COLORS.black};
     padding: ${SPACER.xsmall};
@@ -16,6 +16,15 @@ export const SearchTerm = styled.div`
     width: 35%;
     max-width: 400px;
     min-width: 270px;
+  }
+
+  > div:last-of-type {
+    margin-left: ${SPACER.small};
+    
+    a {
+      color: ${COLORS.blueL1};
+      text-decoration: none; 
+    }
   }
 `;
 
