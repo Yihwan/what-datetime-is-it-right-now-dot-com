@@ -4,7 +4,7 @@ import { TileColumnContainer, Title } from './style';
 
 const TileColumn = ({ title, children }) => (
   <TileColumnContainer>
-    <Title>{title}</Title>
+    <Title>{title} <div>&#8595;</div></Title>
     {children}
   </TileColumnContainer>
 );

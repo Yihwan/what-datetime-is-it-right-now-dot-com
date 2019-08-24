@@ -33,7 +33,7 @@ class TimezoneGrid extends React.Component {
   }
 
   shouldComponentUpdate(prevProps) {
-    return prevProps.date.getSeconds() % 10 === 0;
+    return prevProps.date.getSeconds() % 8 === 0;
   }
 
   render() {

@@ -13,8 +13,6 @@ const DISPLAY_VALUES = {
   hourCycle: (date, datetimeKey) => date.toLocaleDateString(`en-us-u-hc-${datetimeKey}`, { timeStyle: 'medium' }),
 }
 
-const options = { weekday: 'long' };
-
 const Tile = ({ type, datetimeKey, value, handleClick, isSelected, date }) => (
     <TileButton isSelected={isSelected} onClick={() => handleClick(type, datetimeKey)}>
       <Title>{value}</Title>

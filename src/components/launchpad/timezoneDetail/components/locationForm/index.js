@@ -1,29 +1,18 @@
 import React from 'react';
 import Select from 'react-select';
-import Modal from 'react-modal';
+import moment from 'moment';
 import 'moment-timezone';
 
-Modal.setAppElement('#___gatsby');
+import { customSelectStyles, LocationFormContainer, SelectButton } from './style';
+
+const TIMEZONES = moment.tz.names().map(tz => (
+  { key: tz, value: tz, label: tz }
+));
 
 class LocationForm extends React.Component {
   state = {
-    searchOptions: [
-      { value: 'America/Santiago', label: 'America/Santiago' },
-      { value: 'America/Denver', label: 'America/Denver' },
-      { value: 'America/Sao_Paulo', label: 'America/Sao_Paulo' },
-      { value: 'Asia/Seoul', label: 'Asia/Seoul' },
-      { value: 'Europe/Copenhagen', label: 'Europe/Copenhagen' },
-      { value: 'Pacific/Honolulu', label: 'Pacific/Honolulu' },
-    ],
+    searchOptions: TIMEZONES,
     selectedTimezone: null, 
-    isModalOpen: false, 
-  }
-  openModal = () => {
-    this.setState({ isModalOpen: true });
-  }
-
-  closeModal = () => {
-    this.setState({ isModalOpen: false });
   }
 
   customFilter = ({ value }, query) => (
@@ -40,29 +29,22 @@ class LocationForm extends React.Component {
     const { selectedTimezone } = this.state; 
 
     selectNewLoc(selectedTimezone);
-    this.closeModal();
   }
   
   render() {
-    const { searchOptions, selectedTimezone, isModalOpen } = this.state; 
+    const { searchOptions, selectedTimezone } = this.state; 
 
     return(
-      <>
-        <button onClick={this.openModal}>Add new location</button>
-        <Modal
-          isOpen={isModalOpen}
-          onRequestClose={this.closeModal}
-        >
-          <Select
-            isSearchable
-            filterOption={this.customFilter}
-            onChange={this.handleSelectChange}
-            options={searchOptions}
-          />
-          <button disabled={!selectedTimezone} onClick={this.handleSubmit}>Submit</button>
-          <button onClick={this.closeModal}>Close</button>
-        </Modal>
-      </>
+      <LocationFormContainer>
+        <Select
+          isSearchable
+          filterOption={this.customFilter}
+          onChange={this.handleSelectChange}
+          options={searchOptions}
+          styles={customSelectStyles}
+        />
+        <SelectButton disabled={!selectedTimezone} onClick={this.handleSubmit}>Add Timezone</SelectButton>
+      </LocationFormContainer>
     );
   }
 }

@@ -10,7 +10,7 @@ import NewsFeed from './newsFeed';
 import SearchTrends from './searchTrends';
 import RadarClock from './radarClock';
 
-import { LaunchpadContainer, Column } from './style';
+import { LaunchpadContainer } from './style';
 
 class Launchpad extends React.Component {
   state = {

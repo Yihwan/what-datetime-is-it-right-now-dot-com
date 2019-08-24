@@ -15,11 +15,8 @@ export const LaunchpadContainer = styled.main`
   }
 
   ${MEDIA_QUERIES.lgUp} {
-    grid-template-columns: minmax(250px, 500px) minmax(20vw, 550px) minmax(35%, 1fr);
+    grid-template-columns: minmax(250px, 30vw) minmax(20vw, 30vw) minmax(35%, 1fr);
     grid-template-rows: min-content minmax(25vh, 1fr) min-content minmax(20vh, 1fr) minmax(33vh, 1fr);
     max-height: 100vh;
   }
-`;
-
-export const Column = styled.div`
 `;

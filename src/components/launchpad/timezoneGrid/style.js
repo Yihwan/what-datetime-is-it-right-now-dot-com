@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER } from 'src/constants/style';
+import { COLORS, SPACER, TYPOGRAPHY } from 'src/constants/style';
 
 const RANDOM_COLORS = [
   COLORS.red,
@@ -11,10 +11,12 @@ const RANDOM_COLORS = [
 export const TimezoneGridContainer = styled.section`
   overflow: auto;
   max-height: 33vh;
+
+  font-size: ${TYPOGRAPHY.FONT_SIZE.label};
 `;
 
 export const TimezoneGridTable = styled.table`
-  overflow: hidden ;
+  overflow: hidden;
   border-collapse: separate;
 
   thead {

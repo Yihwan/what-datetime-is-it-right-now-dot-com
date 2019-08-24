@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { TIMESTAMP_NAMES } from 'src/constants/timestamp';
 import { DEFAULTS, selectData } from 'src/constants/international';
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 
@@ -46,6 +45,7 @@ class DatetimeSettings extends React.Component {
           <TileColumn title="Locale">
             {localeData.map(data => (
               <Tile
+                key={data.datetimeKey}
                 type={data.type}
                 datetimeKey={data.datetimeKey}
                 value={data.value}
@@ -55,9 +55,10 @@ class DatetimeSettings extends React.Component {
               />
             ))}
           </TileColumn>
-          <TileColumn title="Number System">
+          <TileColumn title="Number">
             {numberSystemData.map(data => (
               <Tile
+                key={data.datetimeKey}
                 type={data.type}
                 datetimeKey={data.datetimeKey}
                 value={data.value}
@@ -70,6 +71,7 @@ class DatetimeSettings extends React.Component {
           <TileColumn title="Calendar">
             {calendarData.map(data => (
               <Tile
+                key={data.datetimeKey}
                 type={data.type}
                 datetimeKey={data.datetimeKey}
                 value={data.value}
@@ -82,6 +84,7 @@ class DatetimeSettings extends React.Component {
           <TileColumn title="Hour Cycle">
             {hourCycleData.map(data => (
               <Tile
+                key={data.datetimeKey}
                 type={data.type}
                 datetimeKey={data.datetimeKey}
                 value={data.value}

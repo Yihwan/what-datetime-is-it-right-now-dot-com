@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Modal from 'react-modal';
 
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 import Timestamp from 'src/components/timestamp';

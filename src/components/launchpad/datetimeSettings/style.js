@@ -3,6 +3,6 @@ import { SPACER } from 'src/constants/style';
 
 export const DatetimeSettingsContainer = styled.section`
   display: flex;
-  justify-content: space-between;
-  padding: ${SPACER.small} ${SPACER.xsmall};
+  justify-content: space-around;
+  padding: 0 ${SPACER.xsmall};
 `;

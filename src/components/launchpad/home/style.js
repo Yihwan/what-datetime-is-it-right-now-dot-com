@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { COLORS, SPACER, MEDIA_QUERIES } from 'src/constants/style';
+import { COLORS, SPACER } from 'src/constants/style';
 
 export const ActionContainer = styled.div`
   display: flex; 

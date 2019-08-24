@@ -18,10 +18,10 @@ export const customStyles = {
     padding: 0,
     height: 'auto',
     overflow: 'auto',
-
   },
   overlay: {
     backgroundColor: `rgba(0, 0, 0, 0.5)`,
+    zIndex: 10,
   }
 };
 

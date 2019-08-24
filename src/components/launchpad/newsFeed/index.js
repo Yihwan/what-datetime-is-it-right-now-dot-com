@@ -30,22 +30,22 @@ const NewsFeed = () => (
 
         <TabPanel>
           {ARTICLES['breaking'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
-            <NewsArticleComponent article={article}/>
+            <NewsArticleComponent key={article.srcUrl} article={article}/>
           ))}
         </TabPanel>
         <TabPanel>
           {ARTICLES['business'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
-            <NewsArticleComponent article={article} />
+            <NewsArticleComponent key={article.srcUrl} article={article} />
           ))}
         </TabPanel>
         <TabPanel>
           {ARTICLES['world'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
-            <NewsArticleComponent article={article} />
+            <NewsArticleComponent key={article.srcUrl} article={article} />
           ))}
         </TabPanel>
         <TabPanel>
           {ARTICLES['politics'].sort((a, b) => parseInt(b.timePublished, 10) - parseInt(a.timePublished, 10)).map(article => (
-            <NewsArticleComponent article={article} />
+            <NewsArticleComponent key={article.srcUrl} article={article} />
           ))}
         </TabPanel>
       </Tabs>
