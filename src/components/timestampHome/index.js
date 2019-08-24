@@ -17,7 +17,7 @@ const TimestampHome = () => (
           duration={2}
           bg={COLORS.black}
         >
-          ☀
+          &#x2600;&#xFE0E;
         </AniLink>
       </LaunchpadLinkContainer>
       <Timestamp />
