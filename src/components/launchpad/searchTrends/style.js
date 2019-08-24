@@ -1,8 +1,14 @@
 
 import styled from '@emotion/styled';
-import { COLORS, SPACER, TYPOGRAPHY } from 'src/constants/style';
+import { COLORS, SPACER, TYPOGRAPHY, MEDIA_QUERIES } from 'src/constants/style';
 
 export const SearchTrendsContainer = styled.section`
+  height: 270px; 
+
+  ${MEDIA_QUERIES.mdUp} {
+    height: unset; 
+  }
+
   .react-tabs__tab-list {
     display: flex;
     font-size: ${TYPOGRAPHY.FONT_SIZE.label};

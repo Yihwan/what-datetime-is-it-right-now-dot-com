@@ -31,7 +31,7 @@ export const SearchTerm = styled.div`
 export const TabPanelContent = styled.div`
   position: absolute; 
   height: calc(100% - 110px);
-  width: 100%;
+  width: 99%;
 
   display: flex; 
 `;
