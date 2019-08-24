@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'gatsby';
 
 import LaunchpadWindow from 'src/shared-components/launchpadWindow';
 import Timestamp from 'src/components/timestamp';
@@ -9,7 +10,7 @@ import {
   InnerContainer,
   HomeLink,
   CurrentTimeContainer,
-  AZ5Button
+  AZ5Button,
 } from './style';
 
 const Home = ({ activateAZ5 }) => {
@@ -19,7 +20,7 @@ const Home = ({ activateAZ5 }) => {
     <LaunchpadWindow title="What DATETIME Is It Right Now" componentName="Home">
       <ActionContainer>
         <InnerContainer>
-          <HomeLink href="/">Go Back</HomeLink>
+          <HomeLink to="/" duration={2} fade>Go Back</HomeLink>
           <CurrentTimeContainer><Timestamp /></CurrentTimeContainer>
         </InnerContainer>
 

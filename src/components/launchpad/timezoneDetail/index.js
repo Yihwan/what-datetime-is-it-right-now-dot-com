@@ -70,7 +70,9 @@ class TimezoneDetail extends React.Component {
     newSelectedLoc[region] = [...newSelectedLoc[region] || [], { city, zone }];
 
     this.setState({ selectedLoc: newSelectedLoc }, () => {
-      localStorage.setItem('timezoneDetailLoc', JSON.stringify(this.state));
+      typeof window !== 'undefined' && (
+        localStorage.setItem('timezoneDetailLoc', JSON.stringify(this.state))
+      );
     });
   }
 

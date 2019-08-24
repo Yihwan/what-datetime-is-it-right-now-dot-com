@@ -30,6 +30,8 @@ class Timestamp extends React.Component {
 
   output = date => {
     // TODO-YK: Fix this shit. 
+    if (typeof window === 'undefined') return;
+    
     if (!JSON.parse(localStorage.getItem('datetimeSettings'))) return;
 
     const {

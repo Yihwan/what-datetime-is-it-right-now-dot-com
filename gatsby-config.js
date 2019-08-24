@@ -25,5 +25,6 @@ module.exports = {
       },
     },
     `gatsby-transformer-csv`,
+    `gatsby-plugin-transition-link`,
   ],
 }

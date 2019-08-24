@@ -1,11 +1,9 @@
 import React from 'react';
 
-import Timestamp from 'src/components/timestamp';
+import TimestampHome from 'src/components/timestampHome';
 
 const IndexPage = () => (
-  <>
-    <Timestamp />
-  </>
+  <TimestampHome />
 );
 
 export default IndexPage; 

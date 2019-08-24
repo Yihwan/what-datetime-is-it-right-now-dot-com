@@ -6,6 +6,7 @@ export const LaunchpadContainer = styled.main`
   box-sizing: border-box;
   grid-gap: 2px;
   border: 2px solid ${COLORS.grey};
+  background-color: ${COLORS.black};
   
   
   ${MEDIA_QUERIES.mdUp} {

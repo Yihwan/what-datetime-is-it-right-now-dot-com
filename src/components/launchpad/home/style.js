@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import { COLORS, SPACER } from 'src/constants/style';
 
 export const ActionContainer = styled.div`
@@ -11,7 +12,7 @@ export const InnerContainer = styled.div`
   display: flex;
 `;
 
-export const HomeLink = styled.a`
+export const HomeLink = styled(AniLink)`
   background-color: ${COLORS.greyL1};
   padding: ${SPACER.x2small} ${SPACER.small};
   color: ${COLORS.white};
