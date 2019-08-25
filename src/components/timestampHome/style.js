@@ -38,10 +38,16 @@ export const LaunchpadLinkContainer = styled.nav`
   justify-content: center;
   align-items: center;
   margin-bottom: ${SPACER.base};
+  animation: spin 5s linear infinite;
 
   > a {
     text-decoration: none; 
     color: ${COLORS.white};
     font-size: 1.5rem;
+  }
+
+  @keyframes spin {
+    from {transform: rotateY(0deg);}
+    to {transform: rotateY(360deg);}
   }
 `;
