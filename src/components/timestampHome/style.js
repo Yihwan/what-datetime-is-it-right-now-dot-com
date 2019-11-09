@@ -38,7 +38,7 @@ export const LaunchpadLinkContainer = styled.nav`
   justify-content: center;
   align-items: center;
   margin-bottom: ${SPACER.base};
-  animation: spin 5s linear infinite;
+  animation: spin 13s linear infinite;
 
   > a {
     text-decoration: none; 
@@ -47,7 +47,25 @@ export const LaunchpadLinkContainer = styled.nav`
   }
 
   @keyframes spin {
-    from {transform: rotateY(0deg);}
-    to {transform: rotateY(360deg);}
+    100% {transform: rotate(360deg);}
+  }
+`;
+
+export const Footer = styled.div`
+  color: ${COLORS.grey};
+  background-color: rgba(255, 254, 252, 1);
+  line-height: 1.35;
+
+  position: fixed; 
+  bottom: ${SPACER.large};
+  left 50%;
+  transform: translate(-50%, -50%);
+  
+  text-align: center;
+  font-family: ${TYPOGRAPHY.FONT_FAMILY.system};
+  font-size: 0.9rem;
+
+  > a {
+    color: ${COLORS.blooberbOrange};
   }
 `;
