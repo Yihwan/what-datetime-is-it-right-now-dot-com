@@ -53,7 +53,6 @@ export const LaunchpadLinkContainer = styled.nav`
 
 export const Footer = styled.div`
   color: ${COLORS.grey};
-  background-color: rgba(255, 254, 252, 1);
   line-height: 1.35;
 
   position: fixed; 
