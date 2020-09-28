@@ -10,7 +10,7 @@ const DISPLAY_VALUES = {
   locale: (date, datetimeKey) => date.toLocaleDateString(datetimeKey, { weekday: 'long'}),
   numberSystem: (date, datetimeKey) => date.toLocaleDateString(`en-us-u-nu-${datetimeKey}`, { year: 'numeric', month: 'numeric', day: 'numeric' }),
   calendar: (date, datetimeKey) => date.toLocaleDateString(`en-us-u-ca-${datetimeKey}`, { year: 'numeric', month: 'long' }),
-  hourCycle: (date, datetimeKey) => date.toLocaleDateString(`en-us-u-hc-${datetimeKey}`, { timeStyle: 'medium' }),
+  hourCycle: (date, datetimeKey) => date.toLocaleDateString(`en-us-u-hc-${datetimeKey}`),
 }
 
 const Tile = ({ type, datetimeKey, value, handleClick, isSelected, date }) => (
